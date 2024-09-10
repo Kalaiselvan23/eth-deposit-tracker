@@ -16,51 +16,42 @@ This project monitors Ethereum deposits on a smart contract using `ethers.js` an
 
 ## Table of Contents
 
-1. [Setup](https://www.notion.so/b0e4e4c92ada4e06b05afc05d96f32a4?pvs=21)
-2. [Environment Variables](https://www.notion.so/b0e4e4c92ada4e06b05afc05d96f32a4?pvs=21)
-3. [Code Structure](https://www.notion.so/b0e4e4c92ada4e06b05afc05d96f32a4?pvs=21)
-4. [Monitoring with Prometheus and Grafana](https://www.notion.so/b0e4e4c92ada4e06b05afc05d96f32a4?pvs=21)
-5. [Dockerization](https://www.notion.so/b0e4e4c92ada4e06b05afc05d96f32a4?pvs=21)
-6. [Video Demo](https://www.notion.so/b0e4e4c92ada4e06b05afc05d96f32a4?pvs=21)
+1. [Setup](#setup)
+2. [Environment Variables](#environment-variables)
+3. [Code Structure](#code-structure)
+4. [Monitoring with Prometheus and Grafana](#monitoring-with-prometheus-and-grafana)
+5. [Dockerization](#dockerization)
+6. [Video Demo](#video-demo)
 
 ---
 
 ## Setup
 
 1. **Clone the repository**:
-    
     ```bash
-    git clone <https://github.com/username/repository-name.git>
+    git clone https://github.com/username/repository-name.git
     cd repository-name
-    
     ```
-    
+
 2. **Install dependencies**:
-    
     ```bash
     npm install
-    
     ```
-    
+
 3. **Set up environment variables** in a `.env` file:
-    
-    ```
+    ```plaintext
     INFURA_API_KEY=<Your Infura API Key>
     MONGO_URI=<Your MongoDB URI>
     CONTRACT_ADDRESS=<Ethereum contract address>
     PORT=3000
     TELEGRAM_BOT_TOKEN=<Your Telegram Bot Token>
     TELEGRAM_CHAT_ID=<Your Telegram Chat ID>
-    
     ```
-    
+
 4. **Run the application**:
-    
     ```bash
     npm start
-    
     ```
-    
 
 ---
 
@@ -97,6 +88,7 @@ This project integrates Prometheus and Grafana for real-time monitoring of Ether
     - Total number of deposits.
     - Block confirmations.
     - Ethereum deposit amounts.
+  
 - **Grafana**: Visualizes these metrics in a user-friendly dashboard.
 
 ---
@@ -106,18 +98,17 @@ This project integrates Prometheus and Grafana for real-time monitoring of Ether
 This project is Dockerized for easy setup and scaling. Use Docker Compose to run the entire stack (Node.js app, Prometheus, and Grafana).
 
 1. **Build and start the services**:
-    
     ```bash
     docker-compose up --build
-    
     ```
-    
+
 2. **Access the services**:
     - **Node App**: `http://localhost:3000`
     - **Prometheus**: `http://localhost:9090`
     - **Grafana**: `http://localhost:3001` (default username: `admin`, password: `admin`)
+
 3. **Prometheus Configuration (`prometheus.yml`)**:
-The configuration for Prometheus is provided in `prometheus.yml` to scrape metrics from the Node.js app.
+    The configuration for Prometheus is provided in `prometheus.yml` to scrape metrics from the Node.js app.
 
 ---
 
